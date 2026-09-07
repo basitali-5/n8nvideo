@@ -1,0 +1,18 @@
+services:
+  - type: web
+    name: frameforge-video-studio
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: NODE_VERSION
+        value: 20
+      - key: DATABASE_URL
+        sync: false
+      - key: DATABASE_SSL
+        value: "true"
+      - key: N8N_WEBHOOK_URL
+        sync: false
+      - key: PUBLIC_URL
+        sync: false
